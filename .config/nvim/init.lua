@@ -30,6 +30,7 @@ local function setup_lsp()
     "clangd",
     "gopls",
     "pyright",
+    "rust_analyzer",
   })
 
   local augroup = vim.api.nvim_create_augroup("LspConfig", { clear = true })

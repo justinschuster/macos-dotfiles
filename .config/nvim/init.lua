@@ -26,11 +26,10 @@ vim.opt.fixeol = true
 
 local function setup_lsp()
   vim.lsp.enable({
+    "lua_ls",
     "clangd",
     "gopls",
     "pyright",
-    "tsgo",
-    "zls",
   })
 
   local augroup = vim.api.nvim_create_augroup("LspConfig", { clear = true })
@@ -59,9 +58,19 @@ vim.pack.add({
   "https://github.com/tpope/vim-fugitive",
   "https://github.com/nvim-mini/mini.files",
   "https://github.com/echasnovski/mini.pairs",
+  "https://github.com/rose-pine/neovim",
 })
 
---vim.cmd("colorscheme default")
+require('rose-pine').setup({
+    disable_background = true,
+    styles = {
+        bold = true,
+        italic = false,
+        transparency = true,
+    },
+})
+
+vim.cmd("colorscheme rose-pine-moon")
 
 setup_lsp()
 require("mini.pick").setup()

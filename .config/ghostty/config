@@ -3,7 +3,11 @@ cursor-style-blink = true
 font-family = JetBrains Mono
 mouse-hide-while-typing = true
 
-theme = Atom One Dark
+theme = Rose Pine Moon
+background = 000000
+#background-opacity = 0.95
+background-blur = false
+confirm-close-surface = false
 scrollback-limit = 1000000
 
 shell-integration = zsh

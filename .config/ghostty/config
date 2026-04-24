@@ -1,6 +1,7 @@
 cursor-style = block
 cursor-style-blink = true
 font-family = JetBrains Mono
+font-size = 14
 mouse-hide-while-typing = true
 
 theme = Rose Pine Moon

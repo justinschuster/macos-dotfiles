@@ -1,0 +1,6 @@
+cursor-style = block
+cursor-style-blink = true
+font-family = JetBrains Mono
+shell-integration = zsh
+shell-integration-features = no-cursor
+theme = Atom One Dark

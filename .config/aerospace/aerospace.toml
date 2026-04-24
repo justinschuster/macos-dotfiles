@@ -42,7 +42,7 @@ outer.right      = 3
 alt-enter = 'exec-and-forget open -na Ghostty'
 
 # Kill window — i3's $mod+Shift+q
-alt-shift-q = 'close'
+alt-shift-q = 'close --quit-if-last-window'
 
 # Focus (preserving your i3 default: j/k/l/; = left/down/up/right)
 alt-j         = 'focus left'

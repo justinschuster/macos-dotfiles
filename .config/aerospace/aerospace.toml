@@ -1,0 +1,142 @@
+after-login-command = []
+
+after-startup-command = [
+    # JankyBorders: Rose Pine Moon
+    # active   = iris  (#c4a7e7)  — matches NeoVim accent
+    # inactive = muted (#6e6a86)  — low-contrast unfocused
+    'exec-and-forget borders active_color=0xffc4a7e7 inactive_color=0xff6e6a86 width=2.0',
+]
+
+start-at-login = true
+
+# Keep container hierarchy predictable (like i3)
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+accordion-padding = 30
+
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+# Mouse follows focus when changing monitors (your i3 had this intent)
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+automatically-unhide-macos-hidden-apps = false
+
+[key-mapping]
+preset = 'qwerty'
+
+# ─── Gaps (match your i3 values) ───────────────────────────────────
+[gaps]
+inner.horizontal = 3
+inner.vertical   = 3
+outer.left       = 3
+outer.bottom     = 3
+outer.top        = [{ monitor.built-in = 38}, 38]
+outer.right      = 3
+
+# ─── Main mode ─────────────────────────────────────────────────────
+[mode.main.binding]
+
+# Launch Ghostty — i3's $mod+Return
+alt-enter = 'exec-and-forget open -na Ghostty'
+
+# Kill window — i3's $mod+Shift+q
+alt-shift-q = 'close'
+
+# Focus (preserving your i3 default: j/k/l/; = left/down/up/right)
+alt-j         = 'focus left'
+alt-k         = 'focus down'
+alt-l         = 'focus up'
+alt-semicolon = 'focus right'
+
+# Move windows
+alt-shift-j         = 'move left'
+alt-shift-k         = 'move down'
+alt-shift-l         = 'move up'
+alt-shift-semicolon = 'move right'
+
+# Splits — closest AeroSpace equivalents
+alt-h = 'join-with right'
+alt-v = 'join-with down'
+
+# Fullscreen — i3's $mod+f
+alt-f = 'fullscreen'
+
+# Layouts (rough i3 analogs)
+# s = stacking-like (vertical accordion), w = tabbed-like (horizontal accordion)
+# e = toggle tile orientation
+alt-s = 'layout accordion vertical tiles vertical'
+alt-w = 'layout accordion horizontal tiles horizontal'
+alt-e = 'layout tiles horizontal vertical'
+
+# Floating toggle — i3's $mod+Shift+space
+alt-shift-space = 'layout floating tiling'
+
+# Workspaces — i3's $mod+[1-9,0]
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
+alt-0 = 'workspace 10'
+
+# Move window to workspace
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-4 = 'move-node-to-workspace 4'
+alt-shift-5 = 'move-node-to-workspace 5'
+alt-shift-6 = 'move-node-to-workspace 6'
+alt-shift-7 = 'move-node-to-workspace 7'
+alt-shift-8 = 'move-node-to-workspace 8'
+alt-shift-9 = 'move-node-to-workspace 9'
+alt-shift-0 = 'move-node-to-workspace 10'
+
+# Back-and-forth between last two workspaces (bonus — no i3 equivalent bound)
+alt-tab = 'workspace-back-and-forth'
+
+# Move workspace to other monitor (docked/undocked switching)
+alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+
+# Reload config — i3's $mod+Shift+c
+alt-shift-c = 'reload-config'
+
+# Enter resize mode — i3's $mod+r
+alt-r = 'mode resize'
+
+# ─── Resize mode (mirrors your i3 resize mode exactly) ─────────────
+[mode.resize.binding]
+j         = 'resize width  -50'
+k         = 'resize height +50'
+l         = 'resize height -50'
+semicolon = 'resize width  +50'
+
+left  = 'resize width  -50'
+down  = 'resize height +50'
+up    = 'resize height -50'
+right = 'resize width  +50'
+
+enter = 'mode main'
+esc   = 'mode main'
+alt-r = 'mode main'
+
+# ─── Multi-monitor: laptop-only + occasional 4K via HDMI ───────────
+# Workspaces 1–5 live on the main display (laptop or 4K when docked).
+# Workspaces 6–9,0 prefer the external — they collapse onto main
+# automatically when the HDMI cable is unplugged.
+[workspace-to-monitor-force-assignment]
+1  = 'main'
+2  = 'main'
+3  = 'main'
+4  = 'main'
+5  = 'main'
+6  = 'secondary'
+7  = 'secondary'
+8  = 'secondary'
+9  = 'secondary'
+10 = 'secondary'
